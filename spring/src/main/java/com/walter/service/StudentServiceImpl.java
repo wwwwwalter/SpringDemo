@@ -1,35 +1,38 @@
 package com.walter.service;
 
+import com.walter.dao.StudentDaoImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("studentServiceImpl")
 public class StudentServiceImpl implements StudentService {
 
+    @Autowired
+    private StudentDaoImpl studentDaoImpl;
+
 
     @Override
     public void addStudent() {
-        System.out.println("addStudent");
+        studentDaoImpl.addStudent();
     }
 
     @Override
-    public void selectStudentById(int id) throws Exception{
-        System.out.println("selectStudentById");
-        throw new Exception();
+    public void selectStudentById(int id) throws Exception {
+        studentDaoImpl.selectStudentById(id);
     }
 
     @Override
     public int updateStudent() {
-        System.out.println("updateStudent");
-        return 0;
+        return studentDaoImpl.updateStudent();
     }
 
     @Override
     public void deleteStudent() {
-        System.out.println("deleteStudent");
+        studentDaoImpl.deleteStudent();
     }
 
     @Override
     public void selectStudent() {
-        System.out.println("selectStudent");
+
     }
 }
