@@ -8,6 +8,6 @@
     <bean id="myBeanPostProcessor" class="com.walter.service.MyBeanPostProcessor"/>
     <bean id="userDaoImpl" class="com.walter.dao.StudentDaoImpl"/>
     <bean id="studentServiceImpl" class="com.walter.service.StudentServiceImpl">
-        <property name="studentDao" ref="userDaoImpl"/>
+        <constructor-arg name="studentDao" ref="userDaoImpl"/>
     </bean>
 </beans>
