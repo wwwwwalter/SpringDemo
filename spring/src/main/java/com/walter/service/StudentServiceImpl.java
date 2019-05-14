@@ -12,13 +12,31 @@ public class StudentServiceImpl implements StudentService {
     @Qualifier("studentDaoImpl")
     private StudentDao studentDao;
 
-   /* //被@Autowired取代
-    public StudentServiceImpl(StudentDao studentDao) {
-        this.studentDao = studentDao;
-    }*/
 
     @Override
     public void addStudent() {
-        studentDao.addStudent(new Student("walter", 123));
+        System.out.println("addStudent");
+    }
+
+    @Override
+    public void selectStudentById(int id) throws Exception{
+        System.out.println("selectStudentById");
+        throw new Exception();
+    }
+
+    @Override
+    public int updateStudent() {
+        System.out.println("updateStudent");
+        return 0;
+    }
+
+    @Override
+    public void deleteStudent() {
+        System.out.println("deleteStudent");
+    }
+
+    @Override
+    public void selectStudent() {
+        System.out.println("selectStudent");
     }
 }
