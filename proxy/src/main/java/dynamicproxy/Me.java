@@ -31,6 +31,6 @@ public class Me {
                 }
         );
         proxy.eat();
-        proxy.gift(999,1);
+        proxy.gift(999, 1);
     }
 }
