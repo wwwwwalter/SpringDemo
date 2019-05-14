@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="studentService" class="com.walter.service.StudentServiceImpl"/>
+
     <bean id="myBeanPostProcessor" class="com.walter.service.MyBeanPostProcessor"/>
+    <bean id="userDaoImpl" class="com.walter.dao.StudentDaoImpl"/>
+    <bean id="studentServiceImpl" class="com.walter.service.StudentServiceImpl">
+        <property name="studentDao" ref="userDaoImpl"/>
+    </bean>
 </beans>

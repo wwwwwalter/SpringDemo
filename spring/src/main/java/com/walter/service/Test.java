@@ -8,9 +8,9 @@ public class Test {
                 new ClassPathXmlApplicationContext("application.xml");
 
         StudentService studentService = (StudentService) applicationContext.getBean(
-                "studentService");
+                "studentServiceImpl");
 
-        studentService.study();
+        studentService.addStudent();
 
 
     }

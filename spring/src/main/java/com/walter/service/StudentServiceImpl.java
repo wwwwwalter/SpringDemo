@@ -1,13 +1,22 @@
 package com.walter.service;
 
+import com.walter.bean.Student;
+import com.walter.dao.StudentDao;
+
 public class StudentServiceImpl implements StudentService {
 
-    public StudentServiceImpl() {
-        System.out.println("init");
+    private StudentDao studentDao;
+
+    public StudentDao getStudentDao() {
+        return studentDao;
+    }
+
+    public void setStudentDao(StudentDao studentDao) {
+        this.studentDao = studentDao;
     }
 
     @Override
-    public void study() {
-        System.out.println("好好学习");
+    public void addStudent() {
+        studentDao.addStudent(new Student("walter",123));
     }
 }

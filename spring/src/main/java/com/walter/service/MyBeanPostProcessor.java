@@ -17,22 +17,28 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        Object beanProxy = Proxy.newProxyInstance(bean.getClass().getClassLoader(),
-                bean.getClass().getInterfaces(),
-                new InvocationHandler() {
-                    @Override
-                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                        Object ret = null;
-                        if (method.getName().equals("study")) {
-                            System.out.println("==============");
-                            ret = method.invoke(bean, args);
-                            System.out.println("==============");
-                        }
-                        return ret;
-                    }
-                });
-
         System.out.println("<<<<<<<<<<<<<<<<<");
-        return beanProxy;
+        return bean;
+
+        /*if(beanName.equals("studentService")) {
+            Object beanProxy = Proxy.newProxyInstance(bean.getClass().getClassLoader(),
+                    bean.getClass().getInterfaces(),
+                    new InvocationHandler() {
+                        @Override
+                        public Object invoke(Object proxy, Method method, Object[] args) throws
+                        Throwable {
+                            Object ret = null;
+                            if (method.getName().equals("study")) {
+                                System.out.println("==============");
+                                ret = method.invoke(bean, args);
+                                System.out.println("==============");
+                            }
+                            return ret;
+                        }
+                    });
+
+            System.out.println("<<<<<<<<<<<<<<<<<");
+            return beanProxy;
+        }*/
     }
 }
