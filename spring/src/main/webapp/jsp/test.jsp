@@ -13,8 +13,8 @@
 <body>
 <h1>ssm_springmvc</h1>
 <hr>
-<form action="/springmvc">
-    <input type="submit" value="springmvc">
+<form action="/ssm">
+    <input type="submit" value="ssm">
 </form>
 </body>
 </html>

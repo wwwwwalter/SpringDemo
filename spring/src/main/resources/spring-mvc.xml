@@ -6,8 +6,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-<!--注册组件扫描器--><!--扫描注解-->
-    <context:component-scan base-package ="com.walter.controller"/>
+    <!--注册组件扫描器--><!--扫描注解-->
+    <context:component-scan base-package="com.walter.controller"/>
 
 
     <!--解决返回json数据乱码问题--><!--针对restful风格-->
