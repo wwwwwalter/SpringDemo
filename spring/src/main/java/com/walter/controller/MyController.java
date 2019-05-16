@@ -27,10 +27,10 @@ public class MyController {
     @RequestMapping("/insert")
     public ModelAndView insert() {
         ModelAndView mv = new ModelAndView();
-        User user = new User();
-        user.setName("walter");
-        user.setPassword("222");
+
+        User user = null;
         userService.insert(user);
+
         mv.addObject("msg", user);
         mv.setViewName("result");
         return mv;
