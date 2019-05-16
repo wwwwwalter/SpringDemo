@@ -15,14 +15,23 @@ public class MyController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/ssm")
-    public ModelAndView ssm() {
+    @RequestMapping("/selectall")
+    public ModelAndView selectall() {
         ModelAndView mv = new ModelAndView();
-
         List<User> users = userService.selectAll();
-        mv.addObject("msg", users.toString());
-        userService.selectAll();
+        mv.addObject("msg", users);
+        mv.setViewName("result");
+        return mv;
+    }
 
+    @RequestMapping("/insert")
+    public ModelAndView insert() {
+        ModelAndView mv = new ModelAndView();
+        User user = new User();
+        user.setName("walter");
+        user.setPassword("222");
+        userService.insert(user);
+        mv.addObject("msg", user);
         mv.setViewName("result");
         return mv;
     }

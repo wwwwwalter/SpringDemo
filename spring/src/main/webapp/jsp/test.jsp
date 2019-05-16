@@ -13,8 +13,11 @@
 <body>
 <h1>ssm_springmvc</h1>
 <hr>
-<form action="/ssm">
-    <input type="submit" value="ssm">
+<form action="/selectall">
+    <input type="submit" value="selectall">
+</form>
+<form action="/insert">
+    <input type="submit" value="insert"/>
 </form>
 </body>
 </html>

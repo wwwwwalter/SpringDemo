@@ -1,14 +1,13 @@
 package com.walter.bean;
 
-import org.springframework.stereotype.Repository;
-
-@Repository("user")
 public class User {
     private Integer id;
 
     private String name;
 
     private String password;
+
+
 
     public Integer getId() {
         return id;

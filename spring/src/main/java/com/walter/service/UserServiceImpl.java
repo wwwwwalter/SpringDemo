@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service("userService")
+
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void insert(User user) {
         userDao.insert(user);
+        //throw new RuntimeException("good good");//测试事务回滚
     }
 
     @Override
