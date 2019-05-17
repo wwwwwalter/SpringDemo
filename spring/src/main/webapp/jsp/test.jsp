@@ -11,10 +11,15 @@
     <title>test</title>
 </head>
 <body>
-<h1>ssm_springmvc</h1>
+<h1>restful</h1>
 <hr>
-<form action="/ssm">
-    <input type="submit" value="ssm">
+<form action="/selectall">
+    <input type="submit" value="selectall">
+</form>
+<form action="/insert">
+    用户：<input type="text" name="username"/><br>
+    生日：<input type="date" name="birthday"/><br>
+    <input type="submit" value="insert">
 </form>
 </body>
 </html>

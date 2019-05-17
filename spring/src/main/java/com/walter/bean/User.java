@@ -1,49 +1,51 @@
 package com.walter.bean;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Repository("user")
+import java.time.LocalDate;
+
+/**
+ * @DateTimeFormat作用：
+ * 前端==>controller
+ * 在前端‘时间字符串’进入controller之前
+ * 把时间字符串转成LocalDate
+ * controller==>前端
+ * return的是json不用人工干预
+ */
+
+/**
+ * Mapper<==>MySql
+ * LocalDate<==>Date自动处理，不用人工干预
+ * Date<==>Date自动处理，不用人工干预
+ */
+
 public class User {
-    private Integer id;
+    private int id;
+    private String username;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthday;
 
-    private String name;
-
-    private String password;
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("{");
-        sb.append("\"id\":")
-                .append(id);
-        sb.append(",\"name\":\"")
-                .append(name).append('\"');
-        sb.append(",\"password\":\"")
-                .append(password).append('\"');
-        sb.append('}');
-        return sb.toString();
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }

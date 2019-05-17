@@ -5,7 +5,7 @@ import com.walter.bean.User;
 import java.util.List;
 
 public interface UserDao {
-    int insert(User record);
+    int insert(User user);
 
     List<User> selectAll();
 }
